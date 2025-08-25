@@ -1,4 +1,4 @@
-package curso.java.workshopjava.Config;
+package curso.java.workshopjava.config;
 
 import curso.java.workshopjava.entities.User;
 import curso.java.workshopjava.repositories.UserRepository;
