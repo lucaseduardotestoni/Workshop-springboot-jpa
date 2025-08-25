@@ -1,0 +1,32 @@
+# Ignore arquivos compilados do Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Pastas do build
+/bin/
+/target/
+/out/
+
+# IDEs e editores
+*.idea/
+*.vscode/
+*.iml
+*.classpath
+*.project
+*.settings/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependências baixadas
+/.mvn/
+/node_modules/
+
+# Arquivos específicos do projeto que não devem ser versionados
+web-services-Spring-Boot-JPA-Hibernate.pdf
