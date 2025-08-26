@@ -1,15 +1,20 @@
 package curso.java.workshopjava.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.Instant;
 @Entity
 @Table(name = "tb_order")
-public class Order {
+public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
      private Long id;
-     private Instant moment;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssX", timezone = "UTC")
+    private Instant moment;
 
      @ManyToOne
      @JoinColumn(name = "client_id")
