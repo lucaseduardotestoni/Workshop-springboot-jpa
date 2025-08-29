@@ -3,7 +3,7 @@ package curso.java.workshopjava.repositories;
 
 
 
-import curso.java.workshopjava.entities.Category;
+import curso.java.workshopjava.model.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

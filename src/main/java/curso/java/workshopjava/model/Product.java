@@ -1,4 +1,4 @@
-package curso.java.workshopjava.entities;
+package curso.java.workshopjava.model;
 
 import jakarta.persistence.*;
 

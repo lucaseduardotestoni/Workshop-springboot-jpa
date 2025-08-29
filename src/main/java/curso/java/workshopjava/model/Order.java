@@ -1,7 +1,7 @@
-package curso.java.workshopjava.entities;
+package curso.java.workshopjava.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import curso.java.workshopjava.entities.enums.OrderStatus;
+import curso.java.workshopjava.model.enums.OrderStatus;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -26,6 +26,9 @@ public class Order implements Serializable {
 
     @OneToMany(mappedBy = "id.order")
     private Set<OrderItem> Items = new HashSet<>();
+
+    @OneToOne (mappedBy = "order", cascade = CascadeType.ALL)
+    private Payment payment;
 
     public Order(Long id, Instant moment, OrderStatus order, User client) {
         this.id = id;
@@ -61,6 +64,14 @@ public class Order implements Serializable {
         if (orderStatus != null) {
             this.orderStatus = orderStatus.getCode();
         }
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
     }
 
     public Set<OrderItem> getItems() {

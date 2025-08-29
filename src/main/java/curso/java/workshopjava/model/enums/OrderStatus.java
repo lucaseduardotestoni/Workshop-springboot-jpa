@@ -1,4 +1,4 @@
-package curso.java.workshopjava.entities.enums;
+package curso.java.workshopjava.model.enums;
 
 public enum OrderStatus {
     WAITING_PAYMENT(1),

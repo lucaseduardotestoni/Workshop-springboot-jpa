@@ -1,7 +1,7 @@
-package curso.java.workshopjava.entities.PK;
+package curso.java.workshopjava.model.PK;
 
-import curso.java.workshopjava.entities.Order;
-import curso.java.workshopjava.entities.Product;
+import curso.java.workshopjava.model.Order;
+import curso.java.workshopjava.model.Product;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

@@ -1,4 +1,4 @@
-package curso.java.workshopjava.entities;
+package curso.java.workshopjava.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

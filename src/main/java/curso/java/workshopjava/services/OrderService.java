@@ -1,6 +1,6 @@
 package curso.java.workshopjava.services;
 
-import curso.java.workshopjava.entities.Order;
+import curso.java.workshopjava.model.Order;
 import curso.java.workshopjava.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

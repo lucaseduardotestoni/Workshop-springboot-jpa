@@ -1,7 +1,7 @@
-package curso.java.workshopjava.entities;
+package curso.java.workshopjava.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import curso.java.workshopjava.entities.PK.OrderItemPK;
+import curso.java.workshopjava.model.PK.OrderItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

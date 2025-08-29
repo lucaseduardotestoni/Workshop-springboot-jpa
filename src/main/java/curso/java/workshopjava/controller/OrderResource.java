@@ -1,6 +1,6 @@
-package curso.java.workshopjava.resources;
+package curso.java.workshopjava.controller;
 
-import curso.java.workshopjava.entities.Order;
+import curso.java.workshopjava.model.Order;
 import curso.java.workshopjava.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
