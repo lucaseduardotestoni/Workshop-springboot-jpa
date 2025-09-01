@@ -1,5 +1,6 @@
 package curso.java.workshopjava.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -15,6 +16,8 @@ public class Payment implements Serializable {
     private Long Id;
 
     private Instant moment;
+
+    @JsonIgnore
     @OneToOne
     @MapsId
     private Order order;
@@ -25,6 +28,18 @@ public class Payment implements Serializable {
         this.order = order;
     }
     public Payment() {}
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public Instant getMoment() {
+        return moment;
+    }
 
     @Override
     public boolean equals(Object o) {
