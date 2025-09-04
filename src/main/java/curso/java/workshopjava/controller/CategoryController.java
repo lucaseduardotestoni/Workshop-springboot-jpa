@@ -13,7 +13,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping  (value = "/categories")
-public class CategoryResource {
+public class CategoryController {
     @Autowired
     private CategoryService service;
 

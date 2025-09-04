@@ -13,7 +13,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/products")
-public class ProductResource {
+public class ProductController {
     @Autowired
     private ProductService service;
 
