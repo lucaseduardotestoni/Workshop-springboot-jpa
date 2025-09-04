@@ -4,6 +4,7 @@ import curso.java.workshopjava.model.User;
 import curso.java.workshopjava.repositories.UserRepository;
 import curso.java.workshopjava.services.exceptions.DatabaseException;
 import curso.java.workshopjava.services.exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -23,12 +24,14 @@ public class UserService {
     }
 
     public User findById(Long id) {
-      Optional<User> user = userRepository.findById(id);
-      return user.orElseThrow(() -> new ResourceNotFoundException(id));
+        Optional<User> user = userRepository.findById(id);
+        return user.orElseThrow(() -> new ResourceNotFoundException(id));
     }
+
     public User insert(User user) {
         return userRepository.save(user);
     }
+
     public void delete(Long id) {
         try {
             if (!userRepository.existsById(id)) {
@@ -41,9 +44,14 @@ public class UserService {
     }
 
     public User update(Long id, User user) {
-        User entityUser = userRepository.getReferenceById(id);
-        updateData(entityUser, user);
-        return userRepository.save(entityUser);
+        try {
+            User entityUser = userRepository.getReferenceById(id);
+            updateData(entityUser, user);
+            return userRepository.save(entityUser);
+
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(id);
+        }
     }
 
     private void updateData(User entityUser, User user) {
